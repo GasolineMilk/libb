@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.combo_controller">
+   <children>
+      <Button layoutX="22.0" layoutY="46.0" mnemonicParsing="false" onAction="#btn_author" text="Author" />
+      <Button layoutX="916.0" layoutY="44.0" mnemonicParsing="false" onAction="#btn_category" text="Category" />
+      <Button layoutX="471.0" layoutY="45.0" mnemonicParsing="false" onAction="#btn_publisher" text="Publisher" />
+      <HBox layoutX="-1.0" layoutY="94.0" prefHeight="510.0" prefWidth="1000.0">
+         <children>
+            <AnchorPane fx:id="cate_pane" prefHeight="200.0" prefWidth="333.0" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

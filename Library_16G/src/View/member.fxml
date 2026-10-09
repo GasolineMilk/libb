@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.member_controller">
+   <children>
+      <Label layoutX="50.0" layoutY="45.0" prefHeight="18.0" prefWidth="93.0" text="Search by Name" />
+      <TextField fx:id="txt_search" layoutX="192.0" layoutY="42.0" onAction="#click_enter" />
+      <HBox layoutX="1.0" layoutY="79.0" prefHeight="586.0" prefWidth="1200.0">
+         <children>
+            <TableView fx:id="tbl_member" prefHeight="586.0" prefWidth="788.0">
+              <columns>
+                <TableColumn fx:id="col_mid" prefWidth="75.0" text="Member ID" />
+                <TableColumn fx:id="col_name" prefWidth="61.5999755859375" text="Name" />
+                  <TableColumn fx:id="col_nrc" prefWidth="75.0" text="NRC No" />
+                  <TableColumn fx:id="col_dob" prefWidth="72.800048828125" text="Date of Birth" />
+                  <TableColumn fx:id="col_gender" prefWidth="46.4000244140625" text="Gender" />
+                  <TableColumn fx:id="col_email" prefWidth="55.199951171875" text="Email" />
+                  <TableColumn fx:id="col_phone_no" prefWidth="74.4000244140625" text="Phone No" />
+                  <TableColumn fx:id="col_address" prefWidth="72.0" text="Address" />
+                  <TableColumn fx:id="col_reg_date" prefWidth="90.4000244140625" text="Register Date" />
+                  <TableColumn fx:id="col_exp_date" prefWidth="83.2000732421875" text="Expired Date" />
+                  <TableColumn fx:id="col_book_count" prefWidth="76.79998779296875" text="Book Count" />
+              </columns>
+            </TableView>
+            <AnchorPane prefHeight="586.0" prefWidth="409.0">
+               <children>
+                  <GridPane layoutX="35.0" prefHeight="586.0" prefWidth="354.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.6000122070312" minWidth="10.0" prefWidth="123.2" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="355.2000076293945" minWidth="0.0" prefWidth="224.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="60.59998168945313" minHeight="10.0" prefHeight="53.400000000000006" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="60.59998168945313" minHeight="10.0" prefHeight="53.400000000000006" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="103.79999389648438" minHeight="10.0" prefHeight="77.4" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Name" />
+                        <Label text="Date of Birth" GridPane.rowIndex="1" />
+                        <Label text="Gender" GridPane.rowIndex="2" />
+                        <Label text="Email" GridPane.rowIndex="4" />
+                        <Label text="Phone No" GridPane.rowIndex="5" />
+                        <Label text="Address" GridPane.rowIndex="6" />
+                        <Label text="Register Date" GridPane.rowIndex="7" />
+                        <Label text="Expired Date" GridPane.rowIndex="8" />
+                        <TextField fx:id="txt_name" GridPane.columnIndex="1" />
+                        <TextField fx:id="txt_email" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="txt_phone_no" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <DatePicker fx:id="dp_dob" prefHeight="26.0" prefWidth="238.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <HBox prefHeight="94.0" prefWidth="228.0">
+                                 <children>
+                                    <RadioButton fx:id="r_male" mnemonicParsing="false" text="Male">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="gender" />
+                                       </toggleGroup></RadioButton>
+                                    <RadioButton fx:id="r_fmale" mnemonicParsing="false" text="Female" toggleGroup="$gender" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <TextArea fx:id="txt_address" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <DatePicker fx:id="dp_reg_date" prefHeight="26.0" prefWidth="358.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <DatePicker fx:id="dp_exp_date" prefHeight="26.0" prefWidth="366.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Button fx:id="btn_clear" mnemonicParsing="false" onAction="#click_clear" text="clear" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Button fx:id="btn_reg" layoutX="145.0" layoutY="553.0" mnemonicParsing="false" onAction="#click_reg" text="Register" GridPane.rowIndex="9" />
+                        <Label text="NRC" GridPane.rowIndex="3" />
+                        <TextField fx:id="txt_nrc" layoutX="137.0" layoutY="24.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
